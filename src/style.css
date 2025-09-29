@@ -33,3 +33,19 @@ body {
   color: var(--text);
   min-height: 100vh;
 }
+
+.text-text {
+  color: var(--text);
+}
+
+.text-text-secondary {
+  color: var(--text-secondary);
+}
+
+.text-primary {
+  color: var(--primary);
+}
+
+.text-background {
+  color: var(--background);
+}

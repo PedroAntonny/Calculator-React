@@ -1,15 +1,9 @@
-import React from 'react'
-import Calculator from './components/Calculator'
+import { Text } from './components/Text'
 
 function App() {
   return (
-    <div className="min-h-screen bg-background flex items-center justify-center p-4">
-      <div className="w-full max-w-md">
-        <h1 className="text-3xl font-bold text-center text-text mb-8">
-          Calculadora
-        </h1>
-        <Calculator />
-      </div>
+    <div className="min-h-screen flex flex-col justify-center py-28 px-4">
+      <Text variant="heading">Calculadora</Text>
     </div>
   )
 }
