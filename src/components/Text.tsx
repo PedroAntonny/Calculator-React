@@ -1,22 +1,31 @@
 import React from 'react'
+import { cva, type VariantProps } from 'class-variance-authority'
+import { cn } from '../lib/cn'
 
-interface TextProps extends React.HTMLAttributes<HTMLElement> {
+const textVariants = cva('', {
+  variants: {
+    variant: {
+      default: 'text-xl',
+      muted: 'text-xl text-(--text-secondary)',
+      heading: 'text-2xl',
+      blast: 'text-3xl',
+    },
+  },
+  defaultVariants: {
+    variant: 'default',
+  },
+})
+
+interface TextProps
+  extends React.HTMLAttributes<HTMLElement>,
+    VariantProps<typeof textVariants> {
   as?: keyof React.JSX.IntrinsicElements
-  variant?: 'default' | 'muted' | 'heading' | 'blast'
-  className?: string
   children: React.ReactNode
-}
-
-const textVariants = {
-  default: 'text-xl',
-  muted: 'text-xl text-(--text-secondary)',
-  heading: 'text-2xl',
-  blast: 'text-3xl',
 }
 
 export function Text({
   as = 'span',
-  variant = 'default',
+  variant,
   className,
   children,
   ...props
@@ -26,7 +35,7 @@ export function Text({
   return React.createElement(
     Component,
     {
-      className: `${textVariants[variant]} ${className ? className : ''}`,
+      className: cn(textVariants({ variant }), className),
       ...props,
     },
     children,

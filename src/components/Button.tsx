@@ -1,17 +1,30 @@
+import { cva, type VariantProps } from 'class-variance-authority'
+import { cn } from '../lib/cn'
 import { Text } from './Text'
 
-interface ButtonProps extends React.HTMLAttributes<HTMLElement> {
-  children: React.ReactNode
-  variant?: 'default' | 'primary'
-}
+const buttonVariants = cva(
+  'flex items-center justify-center rounded-[4px] p-3 cursor-pointer text-[var(--text)] bg-[linear-gradient(var(--gradient))] hover:bg-[linear-gradient(var(--gradient-hover))] shadow-[var(--shadow)] appearance-none border-0 outline-none focus:outline-none focus-visible:outline-none ring-0 focus:ring-0 overflow-hidden',
+  {
+    variants: {
+      variant: {
+        default: 'bg-[var(--background)]',
+        primary: 'bg-[var(--primary)]',
+      },
+    },
+    defaultVariants: {
+      variant: 'default',
+    },
+  },
+)
 
-const buttonVariants = {
-  default: 'bg-(--background)',
-  primary: 'bg-(--primary)',
+interface ButtonProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+    VariantProps<typeof buttonVariants> {
+  children: React.ReactNode
 }
 
 export function Button({
-  variant = 'default',
+  variant,
   className,
   children,
   ...props
@@ -20,9 +33,7 @@ export function Button({
     <Text
       as="button"
       variant="heading"
-      className={`flex items-center justify-center rounded-xl p-3 cursor-pointer text-(--text) bg-linear-(--gradient) hover:bg-linear-(--gradient-hover) shadow-(--shadow) ${
-        buttonVariants[variant]
-      } ${className ? className : ''}`}
+      className={cn(className, buttonVariants({ variant }))}
       {...props}
     >
       {children}
