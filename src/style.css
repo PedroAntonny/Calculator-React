@@ -3,7 +3,7 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
+@theme {
   --text: #ebebeb;
   --text-secondary: #6b6b6b;
   --primary: #462878;
@@ -32,20 +32,4 @@ body {
   background-color: var(--background);
   color: var(--text);
   min-height: 100vh;
-}
-
-.text-text {
-  color: var(--text);
-}
-
-.text-text-secondary {
-  color: var(--text-secondary);
-}
-
-.text-primary {
-  color: var(--primary);
-}
-
-.text-background {
-  color: var(--background);
 }

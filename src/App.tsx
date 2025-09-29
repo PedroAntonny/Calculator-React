@@ -1,9 +1,10 @@
-import { Text } from './components/Text'
+import { Button } from './components/Button'
 
 function App() {
   return (
-    <div className="min-h-screen flex flex-col justify-center py-28 px-4">
-      <Text variant="heading">Calculadora</Text>
+    <div className="py-28 px-4">
+      <Button>CE</Button>
+      <Button variant="primary">C</Button>
     </div>
   )
 }
