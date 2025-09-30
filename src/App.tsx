@@ -1,9 +1,11 @@
 import { Calculator } from './components/Calculator'
+import { OperationHistory } from './components/Operation-History'
 
 function App() {
   return (
-    <main className="min-h-screen flex items-start justify-center py-20 px-4">
+    <main className="app-container py-[80px] px-[24px] sm:px-[40px] flex flex-col sm:flex-row items-center sm:items-stretch justify-center gap-[32px]">
       <Calculator />
+      <OperationHistory />
     </main>
   )
 }

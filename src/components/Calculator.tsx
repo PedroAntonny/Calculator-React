@@ -5,7 +5,7 @@ import { Card } from './Card'
 export function Calculator() {
   return (
     <Card
-      className={`flex flex-col gap-[26px] w-[356px] pt-[56px] px-[32px] pb-[32px]`}
+      className={`app-card flex flex-col gap-[26px] w-[356px] pt-[56px] px-[32px] pb-[32px] h-full`}
     >
       <CalculatorDisplay operation="1 + 1" result="2" />
 

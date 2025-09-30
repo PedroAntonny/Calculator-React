@@ -20,3 +20,25 @@
 
   --font-sans: 'Rubik', sans-serif;
 }
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+}
+
+@media (min-width: 640px) {
+  .app-container {
+    flex-direction: row;
+    align-items: stretch;
+  }
+}
+
+@media (max-width: 640px) {
+  .app-card {
+    width: calc(100% - 40px);
+    margin-inline: 20px;
+  }
+}

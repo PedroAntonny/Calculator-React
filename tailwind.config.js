@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+import plugin from 'tailwindcss/plugin'
+
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
@@ -24,5 +26,11 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    plugin(function ({ addVariant }) {
+      addVariant('max-sm', '@media (max-width: 640px)')
+      addVariant('max-md', '@media (max-width: 768px)')
+      addVariant('max-lg', '@media (max-width: 1024px)')
+    }),
+  ],
 }
