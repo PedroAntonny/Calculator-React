@@ -1,13 +1,9 @@
-import { Button } from './components/Button'
-import { Card } from './components/Card'
-import { Text } from './components/Text'
+import { Calculator } from './components/Calculator'
 
 function App() {
   return (
-    <main className="py-28 px-4">
-      <Card>
-        <Text>Calculator</Text>
-      </Card>
+    <main className="min-h-screen flex items-start justify-center py-20 px-4">
+      <Calculator />
     </main>
   )
 }

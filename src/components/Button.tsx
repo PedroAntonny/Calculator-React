@@ -3,7 +3,7 @@ import { cn } from '../lib/cn'
 import { Text } from './Text'
 
 const buttonVariants = cva(
-  'flex items-center justify-center rounded-[4px] p-3 cursor-pointer text-[var(--text)] bg-[linear-gradient(var(--gradient))] hover:bg-[linear-gradient(var(--gradient-hover))] shadow-[var(--shadow)] appearance-none border-0 outline-none focus:outline-none focus-visible:outline-none ring-0 focus:ring-0 overflow-hidden',
+  'flex items-center justify-center rounded-[12px] p-[12px] cursor-pointer text-[var(--text)] bg-[linear-gradient(var(--gradient))] hover:bg-[linear-gradient(var(--gradient-hover))] shadow-[var(--shadow)] appearance-none border-0 outline-none focus:outline-none focus-visible:outline-none ring-0 focus:ring-0',
   {
     variants: {
       variant: {

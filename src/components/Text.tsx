@@ -5,10 +5,10 @@ import { cn } from '../lib/cn'
 const textVariants = cva('', {
   variants: {
     variant: {
-      default: 'text-xl',
-      muted: 'text-xl text-(--text-secondary)',
-      heading: 'text-2xl',
-      blast: 'text-3xl',
+      default: 'text-[20px]',
+      muted: 'text-[20px] text-(--text-secondary)',
+      heading: 'text-[24px]',
+      blast: 'text-[30px]',
     },
   },
   defaultVariants: {
